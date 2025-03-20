@@ -1,0 +1,15 @@
+project:
+  type: website
+
+website:
+  title: "ad688-employability-sp25A2-group2"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: SalarytrendsAI.qmd
+        text: Salary Trends AI  
+
+
