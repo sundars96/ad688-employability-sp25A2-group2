@@ -2,14 +2,19 @@ project:
   type: website
 
 website:
-  title: "ad688-employability-sp25A2-group2"
+  title: "Job Market Analysis 2024"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - href: about.qmd
         text: About
+      - href: data_analysis.ipynb
+        text: Data Analysis
       - href: SalarytrendsAI.qmd
         text: Salary Trends AI  
-
+format:
+  html:
+    theme: cosmo
+    toc: true
 
