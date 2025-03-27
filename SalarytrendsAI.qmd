@@ -1,11 +1,11 @@
 ---
 title: "Salary Disparities Across Disciplines – Who benefits most from AI’s rise?"
-author: "Team Nagpur"
+author: "Sundarajan Swaminathan"
 date: 03/20/2025
 format: 
   html:
     bibliography: references.bib
-    csl: econometrica.csl
+    csl: /home/ubuntu/github-classroom/ad688-employability-sp25A2-group2/csl/econometrica.csl
     toc: true
 ---
 
