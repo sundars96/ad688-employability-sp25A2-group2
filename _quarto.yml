@@ -6,15 +6,24 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - href: about.qmd
-        text: About
-      - href: data_analysis.ipynb
-        text: Data Analysis
+        text: "Home"
       - href: SalarytrendsAI.qmd
-        text: Salary Trends AI  
+        text: "Introduction"
+      - href: data_analysis.ipynb
+        text: "Data Cleaning & Exploration"
+      - href: eda.qmd/ipynb
+        text: "Exploratory Data Analysis"
+      - href: skill_gap_analysis.qmd/ipynb
+        text: "Skill Gap Analysis"
+      - href: ml_methods.qmd/ipynb
+        text: "ML Methods"
+      - href: nlp_methods.qmd/ipynb
+        text: "NLP Methods"
 format:
   html:
     theme: cosmo
     toc: true
-
+execute:
+  echo: true
+  eval: true
+  code-fold: true
