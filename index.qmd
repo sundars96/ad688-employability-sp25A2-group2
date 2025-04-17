@@ -1,0 +1,6 @@
+---
+title: "Job Market Analysis 2024"
+format: html
+---
+
+Welcome to the Job Market Analysis project!
