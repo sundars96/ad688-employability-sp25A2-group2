@@ -2,28 +2,32 @@ project:
   type: website
 
 website:
-  title: "Job Market Analysis 2024"
+  title: "AI vs. Non-AI Job Growth"
   navbar:
     left:
       - href: index.qmd
-        text: "Home"
-      - href: SalarytrendsAI.qmd
-        text: "Introduction"
-      - href: data_analysis.ipynb
-        text: "Data Cleaning & Exploration"
-      - href: eda.qmd/ipynb
-        text: "Exploratory Data Analysis"
-      - href: skill_gap_analysis.qmd/ipynb
-        text: "Skill Gap Analysis"
-      - href: ml_methods.qmd/ipynb
-        text: "ML Methods"
-      - href: nlp_methods.qmd/ipynb
-        text: "NLP Methods"
+        text: Home
+      - href: findings.qmd
+        text: Findings
+      - href: career-strategy.qmd
+        text: Career Strategy
+      - href: about.qmd
+        text: About
+
 format:
   html:
     theme: cosmo
     toc: true
+    number-sections: true
+    code-fold: true
+    code-tools: true
+    df-print: paged
+
 execute:
-  echo: true
+  echo: false
   eval: true
-  code-fold: true
+  freeze: auto
+
+bibliography: references.bib
+csl: csl/econometrica.csl
+jupyter: python3

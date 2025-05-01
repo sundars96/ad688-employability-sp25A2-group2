@@ -1,0 +1,105 @@
+---
+title: "AI vs. Non-AI Careers: Job Growth and Market Trends in 2024"
+author:
+  -Sundarajan Swaminathan
+date: "2025-04-02"
+format: html
+bibliography: references.bib
+csl: csl/econometrica.csl
+toc: true
+---
+
+**Introduction**
+
+Artificial Intelligence (AI) is accelerating at an unprecedented pace, transforming the global employment landscape and fueling discussions around job displacement, wage differences, and the rise of new career paths. As automation powered by AI integrates into diverse sectors, the workforce is compelled to keep pace with shifting skill requirements. This report examines the rise and implications of AI-driven vs. traditional careers in 2024, offering a detailed look at salary trends, job stability, industry shifts, and emerging professional opportunities.
+
+---
+
+**Research Rationale**
+
+The impact of Artificial Intelligence (AI) on employment is both disruptive and generative—eliminating certain roles while simultaneously creating new ones. As highlighted by the World Economic Forum (2024), AI is projected to displace 85 million jobs by 2025, but also give rise to 97 million new opportunities. This profound transformation calls for a data-informed analysis to explore:
+
+The distinctions between AI-powered roles and traditional job functions.
+
+Industry-specific trends in AI-driven job creation vs. displacement.
+
+The most in-demand skills across both AI and Non-AI career paths.
+
+Variations in salary patterns between emerging and conventional professions.
+
+Through a combination of "lightcast" labor data, collaborative GitHub workflows, and Quarto publishing, this study delivers actionable insights to guide job seekers navigating the 2024 workforce.
+
+---
+
+**Literature Review**
+
+**1. Emergence of New AI-Centric Job Titles**
+   
+@brown2024automation highlights the rapid evolution of the job market, noting the creation of new AI-driven roles such as Prompt Engineers, AI Ethics Officers, and Automation Specialists. These positions, which didn’t exist a decade ago, reflect the shifting demands of a technology-driven workforce.
+
+**2. AI’s Influence on Employment Patterns**
+
+As observed by @smith2023ai, sectors like finance, healthcare, and technology have benefited from a rise in AI-powered roles. In contrast, retail, customer service, and manufacturing are increasingly at risk due to automation, leading to potential job displacement.
+
+**3. Compensation Disparities Between AI and Traditional Roles**
+
+@johnson2024salaries reports that roles in AI—such as Machine Learning Engineers and Data Scientists—command 30–50% higher salaries than traditional positions like Mechanical Engineers or Accountants. This pay premium is driven by demand for AI skills and the relative security these roles offer in an evolving job market.
+
+---
+
+## Preliminary Findings
+
+### **1. AI vs. Non-AI Job Growth (2024 Trends)**
+
+| **Industry**               | **AI-Driven Job Growth**                 | **Jobs Lost Due to AI**          |
+|----------------------------|------------------------------------------|---------------------------------|
+| **Tech & Data Science**    | AI Engineers, Data Scientists           | Some Software Testing Roles     |
+| **Finance**               | AI Risk Analysts, Algorithmic Traders   | Bank Tellers, Loan Officers     |
+| **Manufacturing**         | AI-Assisted Robotics Engineers          | Assembly Line Workers           |
+| **Retail & Customer Service** | AI Chatbot Developers, E-commerce Analysts | Cashiers, Call Center Agents  |
+| **Healthcare**            | AI Radiologists, Bioinformatics Experts | Manual Data Entry Jobs          |
+
+✅ **Finding:** AI **reshapes job roles** rather than purely eliminating them.
+
+---
+
+### **2. Salary Trends: AI vs. Traditional Careers**
+
+| **Job Role**                     | **AI-Powered?** | **Average Salary (2024)** |
+|----------------------------------|----------------|--------------------------|
+| **Machine Learning Engineer**    | ✅ Yes         | $140,000                 |
+| **Data Scientist**               | ✅ Yes         | $125,000                 |
+| **AI Risk Analyst (Finance)**    | ✅ Yes         | $118,000                 |
+| **Software Developer**           | ❌ No          | $95,000                  |
+| **Mechanical Engineer**          | ❌ No          | $85,000                  |
+| **Customer Service Representative** | ❌ No          | $45,000                  |
+
+✅ **Finding:** AI-based roles offer **higher salaries and greater career stability** than traditional jobs.
+
+---
+
+**Career Strategy Recommendations**
+
+To stay competitive in an AI-transformed job market, professionals are encouraged to:
+
+**Build Expertise in AI & Data Science 📊**
+
+Develop technical proficiency in Python, Machine Learning, and AI-powered analytics.
+
+Enroll in courses covering Natural Language Processing (NLP), Big Data, and model deployment techniques.
+
+**Focus on AI-Accelerated Industries 🚀**
+
+Align your career path with sectors embracing AI at scale—particularly finance, technology, and healthcare—where demand for AI talent is growing rapidly.
+
+**Adopt AI Tools in Everyday Workflows 💡**
+
+Embrace productivity through automation platforms, AI-enhanced collaboration tools, and smart project management software to stay ahead in hybrid and digital workplaces.
+---
+
+## References
+
+::: {#refs}
+:::
+
+Quarto will automatically format citations from `references.bib` in Econometrica style.

@@ -1,0 +1,222 @@
+---
+title: "Exploratory Data Analysis on Job Postings"
+format: html
+jupyter: python3
+---
+
+## 📥 Load Dataset
+
+```{python}
+import pandas as pd
+
+df = pd.read_csv("lightcast_job_postings.csv")
+df.head()
+```
+
+---
+
+## 📈 Job Postings Over Time
+
+```{python}
+df['POSTED'] = pd.to_datetime(df['POSTED'], errors='coerce')
+job_trend = df['POSTED'].dt.to_period('M').value_counts().sort_index()
+
+job_trend.sort_index().plot(kind='line', marker='o', figsize=(12, 4), title='Job Postings Over Time (Line View)')
+```
+
+Between May and September 2024, job postings remained relatively stable, averaging around 15,000 per month. A noticeable dip occurred in July, possibly reflecting a seasonal slowdown in hiring. Activity quickly rebounded in August and peaked slightly in September, indicating renewed demand in the job market.
+
+---
+
+## 🏆 Top 5 Job Titles by Postings
+
+```{python}
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Prepare data
+top_titles = df['TITLE_CLEAN'].value_counts().head(5)
+
+# Plot
+plt.figure(figsize=(15, 7))
+sns.barplot(x=top_titles.values, y=top_titles.index, palette="Blues_d")
+plt.xlabel("Number of Postings")
+plt.ylabel("Job Title")
+plt.title("Top 5 Job Titles by Postings", fontsize=14)
+
+for i, val in enumerate(top_titles.values):
+    plt.text(val + 50, i, f"{val:,}", va='center', fontsize=10)
+
+plt.tight_layout()
+plt.show()
+```
+
+The role of Data Analyst dominates the job market with 4,668 postings, far ahead of the next most common roles. Other high-demand positions include Enterprise Architect, Senior Data Analyst, and Business Intelligence Analyst, each with approximately 750–850 postings.
+
+---
+
+## 💡 Top 10 In-Demand Skills
+
+```{python}
+import ast
+
+clean_skills = df['SKILLS_NAME'].dropna().apply(
+    lambda x: ast.literal_eval(x) if x.strip().startswith('[') else []
+)
+
+all_skills = clean_skills.explode().str.strip()
+top_skills = all_skills.value_counts().head(10)
+
+plt.figure(figsize=(15, 6))
+sns.barplot(x=top_skills.values, y=top_skills.index, palette='mako')
+plt.title("Top 10 In-Demand Skills", fontsize=16)
+plt.xlabel("Number of Postings")
+plt.ylabel("Skill")
+
+for i, val in enumerate(top_skills.values):
+    plt.text(val + 5, i, f"{val:,}", va='center')
+
+plt.tight_layout()
+plt.show()
+```
+
+The most in-demand skill is Communication, appearing in over 31,000 postings. Other top skills include Data Analysis, Management, and SQL, highlighting strong demand for analytical and interpersonal capabilities.
+
+---
+
+## 💰 Salary Trend: Data Analyst Roles
+
+```{python}
+df_da = df[df['TITLE_CLEAN'].str.lower() == 'data analyst'].copy()
+df_da['SALARY_MEAN'] = df_da[['SALARY_FROM', 'SALARY_TO']].mean(axis=1)
+df_da['POSTED_MONTH'] = df_da['POSTED'].dt.to_period('M')
+salary_trend = df_da.groupby('POSTED_MONTH')['SALARY_MEAN'].median()
+
+plt.figure(figsize=(12, 5))
+salary_trend.sort_index().plot(marker='o')
+plt.title("Median Salary Trend for Data Analyst Roles")
+plt.xlabel("Month")
+plt.ylabel("Median Salary")
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+Between May and September 2024, Data Analyst salaries rose steadily, peaking in September at $85,000. The trend reflects increasing demand for data roles as organizations plan for Q4 growth.
+
+---
+
+## 💰 Median Salary Trend: All Job Postings
+
+```{python}
+df['SALARY_MEAN'] = df[['SALARY_FROM', 'SALARY_TO']].mean(axis=1)
+df['POSTED_MONTH'] = df['POSTED'].dt.to_period('M')
+
+monthly_salary = df.groupby('POSTED_MONTH')['SALARY_MEAN'].median().sort_index()
+
+plt.figure(figsize=(12, 5))
+monthly_salary.plot(marker='o', color='teal')
+plt.title("Median Salary Trend Across All Job Postings")
+plt.xlabel("Month")
+plt.ylabel("Median Salary")
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+In May 2024, the median salary peaked at over $116,000 and dipped through July. It rebounded again in August and September, potentially due to seasonal hiring rebounds.
+
+---
+
+## 🌎 States with Most Diverse Job Titles
+
+```{python}
+job_diversity = df.groupby('STATE_NAME')['TITLE_CLEAN'].nunique().sort_values(ascending=False)
+
+plt.figure(figsize=(10, 6))
+sns.barplot(x=job_diversity.head(10).values, y=job_diversity.head(10).index, palette="viridis")
+plt.title("Top 10 States by Job Title Diversity")
+plt.xlabel("Number of Unique Job Titles")
+plt.ylabel("State")
+
+for i, val in enumerate(job_diversity.head(10).values):
+    plt.text(val + 5, i, f"{val}", va='center')
+
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+## 📍 Top Job Titles in Boston
+
+```{python}
+df_boston = df[df['CITY_NAME'].str.lower() == 'boston, ma']
+boston_top_titles = df_boston['TITLE_CLEAN'].value_counts().head(10)
+
+plt.figure(figsize=(10, 6))
+sns.barplot(x=boston_top_titles.values, y=boston_top_titles.index, palette="magma")
+plt.title("Top 10 Job Titles in Boston")
+plt.xlabel("Number of Postings")
+plt.ylabel("Job Title")
+
+for i, val in enumerate(boston_top_titles.values):
+    plt.text(val + 3, i, f"{val}", va='center')
+
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+## 💵 Top-Paying States
+
+```{python}
+top_states_salary = df.groupby('STATE_NAME')['SALARY_MEAN'].median().sort_values(ascending=False)
+
+plt.figure(figsize=(10, 6))
+sns.barplot(x=top_states_salary.head(10).values, y=top_states_salary.head(10).index, palette="plasma")
+plt.title("Top 10 States by Median Salary")
+plt.xlabel("Median Salary")
+plt.ylabel("State")
+
+for i, val in enumerate(top_states_salary.head(10).values):
+    plt.text(val + 500, i, f"${int(val):,}", va='center')
+
+plt.tight_layout()
+plt.show()
+```
+
+Connecticut leads with a median salary of $125,900, followed by New Jersey and Virginia. These figures indicate a concentration of high-paying jobs in both coastal and emerging markets.
+
+---
+
+## 🏅 Highest-Paying Jobs in Connecticut
+
+```{python}
+df_ct = df[df['STATE_NAME'].str.lower() == 'connecticut'].copy()
+df_ct['SALARY_MEAN'] = df_ct[['SALARY_FROM', 'SALARY_TO']].mean(axis=1)
+
+top_ct_jobs = (
+    df_ct.groupby('TITLE_CLEAN')['SALARY_MEAN']
+    .median()
+    .sort_values(ascending=False)
+    .head(5)
+)
+
+plt.figure(figsize=(25, 10))
+sns.barplot(x=top_ct_jobs.values, y=top_ct_jobs.index, palette="rocket")
+plt.title("Top 5 Highest-Paying Job Titles in Connecticut")
+plt.xlabel("Median Salary")
+plt.ylabel("Job Title")
+
+for i, val in enumerate(top_ct_jobs.values):
+    plt.text(val + 1000, i, f"${int(val):,}", va='center')
+
+plt.tight_layout()
+plt.show()
+```
+
+The highest-paying job in Connecticut is Oracle Utilities Associate Director, with a median salary of $280,350. Other top roles include senior consultants and data engineering leadership

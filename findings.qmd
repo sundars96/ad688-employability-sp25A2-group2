@@ -1,0 +1,120 @@
+---
+title: "Findings – AI's Impact on Job Growth"
+bibliography: references.bib
+csl: csl/econometrica.csl
+toc: true
+format: 
+  html:
+    code-fold: true
+    df-print: paged
+jupyter: python3
+execute:
+  echo: true
+---
+
+## 1️⃣ The State of AI-Powered Job Growth
+
+### **1.1 AI's Impact on Different Industries**
+
+Artificial Intelligence (AI) is **reshaping industries**, leading to both job displacement and job creation. According to the **World Economic Forum (2024)**, AI will impact **85 million jobs** but simultaneously create **97 million new ones** [@weforum2024jobs].
+
+### **📊 Interactive Bar Chart: AI Job Impact by Industry**
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+# Industry-wise job impact data
+data = {
+    "Industry": ["Tech & Data Science", "Finance", "Manufacturing", "Retail & Customer Service", "Healthcare", "Marketing & Advertising"],
+    "Jobs Created": [500000, 300000, 250000, 200000, 400000, 150000],
+    "Jobs Lost": [50000, 150000, 300000, 500000, 50000, 80000]
+}
+
+df = pd.DataFrame(data)
+
+# Create interactive bar chart
+fig = px.bar(
+    df,
+    x="Industry",
+    y=["Jobs Created", "Jobs Lost"],
+    barmode="group",
+    title="<b>AI’s Impact on Job Growth vs. Loss by Industry</b>",
+    labels={
+        "Industry": "<i>Industry</i>",
+        "value": "<i>Number of Jobs</i>",
+        "variable": "<i>Job Impact</i>"
+    },
+    color_discrete_sequence=px.colors.qualitative.Bold
+)
+
+fig.update_layout(
+    font=dict(family="Arial", size=14),
+    title_font_size=20,
+    plot_bgcolor="rgba(240,240,240,0.9)",
+    paper_bgcolor="rgba(240,240,240,0.95)",
+    legend_title_text="<b>Job Category</b>",
+    xaxis=dict(showgrid=False),
+    yaxis=dict(showgrid=True, gridcolor="lightgrey", zeroline=False)
+)
+
+fig.update_traces(marker_line_width=1.5, marker_line_color='black')
+
+fig.show()
+```
+
+✅ **Finding**: AI is **not just eliminating jobs**—it is **reshaping job roles** and requiring **new skill sets** [@elgar2024growth].
+
+---
+
+## 2️⃣ AI vs. Non-AI Career Salary Trends
+
+As AI becomes more integrated into industries, **AI-powered careers** offer significantly higher salaries than traditional jobs [@bizreport2024ai]. Below is a comparison of **AI vs. Non-AI salaries** in 2024.
+
+### **📈 Interactive Table: AI vs. Non-AI Job Salaries**
+
+```{python}
+import plotly.graph_objects as go
+import pandas as pd
+
+# Salary comparison data
+df_salary = pd.DataFrame({
+    "Job Role": ["Machine Learning Engineer", "Data Scientist", "AI Risk Analyst (Finance)", "Software Developer", "Mechanical Engineer", "Customer Service Rep"],
+    "AI-Powered Career?": ["✅ Yes", "✅ Yes", "✅ Yes", "❌ No", "❌ No", "❌ No"],
+    "Average Salary (2024)": ["$140,000", "$125,000", "$118,000", "$95,000", "$85,000", "$45,000"]
+})
+
+fig = go.Figure(data=[go.Table(
+    header=dict(values=list(df_salary.columns),
+                fill_color='paleturquoise',
+                align='left'),
+    cells=dict(values=[df_salary[col] for col in df_salary.columns],
+               fill_color='lavender',
+               align='left'))
+])
+
+fig.show()
+```
+
+✅ **Finding**: AI-powered careers **command higher salaries** than traditional roles, making AI skills essential for career advancement [@forbes2024future].
+
+---
+
+## 3️⃣ AI Job Automation Risks: Who Is at Risk?
+
+AI is **automating repetitive tasks** across industries, putting millions of jobs at risk. Research from **ScienceDirect (2024)** shows that AI will impact several sectors **over the next five years** [@sciencedirect2024employment].
+
+| **At-Risk Job Categories**   | **Examples of Jobs AI is Replacing** |
+|------------------------------|-------------------------------------|
+| **Clerical Work**            | Data entry clerks, secretaries |
+| **Retail & Banking**         | Cashiers, bank tellers, call center agents |
+| **Manufacturing & Logistics** | Assembly line workers, warehouse packers |
+
+✅ **Finding**: The **job displacement risk** is highest for **repetitive, rule-based tasks**—but AI-driven **reskilling can mitigate this risk** [@umass2024ats].
+
+---
+
+## References
+
+::: {#refs}
+:::

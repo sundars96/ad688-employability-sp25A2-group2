@@ -1,6 +1,115 @@
 ---
-title: "Job Market Analysis 2024"
+title: "AI vs. Non-AI Job Growth: Is AI Taking Over or Creating More Jobs?"
+author:
+  - "Sundarajan Swaminathan"
+date: "2025-02-18"
 format: html
+bibliography: references.bib
+csl: csl/econometrica.csl
+toc: true
+execute:
+  echo: true
 ---
 
-Welcome to the Job Market Analysis project!
+**🌐 Introduction: AI and the Future of Work**
+
+The rapid evolution of Artificial Intelligence (AI) is revolutionizing the global workforce—raising one big question:
+**🔍 Is AI stealing jobs, or is it opening doors to entirely new careers?**
+
+As AI systems become more integrated into day-to-day operations—from automation in factories to algorithmic decision-making in finance—the debate over job displacement versus job creation has intensified. This report investigates both sides of the AI impact equation:
+
+The risk of automation replacing traditional roles
+
+The emergence of high-growth, AI-powered careers
+
+In this pivotal moment, professionals across all industries must rethink their capabilities, stay agile with technological adoption, and proactively future-proof their skillsets.
+
+---
+
+**🎯 Why This Study Matters in 2025**
+
+The fusion of AI and employment isn’t just a tech topic—it’s a global economic and societal concern. As of 2025, this intersection directly affects:
+
+✅ Employees – Needing to continuously reskill and embrace lifelong learning
+✅ Employers – Balancing automation with human capital strategies
+✅ Governments – Designing policy to safeguard and reskill displaced workers
+✅ Students & Career Changers – Navigating toward sustainable, future-proof roles
+
+**🔥 Core Questions Explored:**
+
+Which jobs are most vulnerable to automation?
+
+What industries are booming due to AI?
+
+Do AI-powered roles offer higher pay and better growth?
+
+What actions must professionals take to remain relevant?
+
+These aren't hypothetical questions—they are urgent priorities for a workforce navigating transformation.
+---
+
+**🤖 AI: Job Disruptor and Creator**
+
+AI’s influence on employment is twofold—it both replaces and generates jobs.
+
+According to the World Economic Forum (2024):
+
+🔁 85 million jobs will be displaced by AI by 2025
+➕ But 97 million new roles will be created, many of which didn’t exist a decade ago
+
+⚠️ Roles Most at Risk:
+🧾 Administrative & Clerical – Data entry clerks, receptionists
+
+🛍️ Retail & Banking – Cashiers, loan officers, bank tellers
+
+🏭 Manufacturing – Machine operators, assembly line staff
+
+**🚀 Emerging AI-Powered Roles:**
+
+🧠 AI/ML Engineers – Developing intelligent algorithms
+
+📊 Data Scientists & Algorithmic Traders – Deriving insights and driving automated decision-making
+
+🎨 AI-Enhanced Creatives – Using AI tools for design, copywriting, and content generation
+
+⚖️ AI Ethics & Policy Analysts – Addressing ethical use and regulation of AI
+
+As AI transforms industries, digital literacy, analytical skills, and creativity will be more important than ever.
+---
+
+**Report Structure: What You'll Learn**
+
+This study is structured into three practical sections designed for job seekers, professionals, educators, and policymakers:
+
+**1️⃣ Findings – Understanding the Job Shift**
+Breakdown of job losses vs. creation across major sectors
+
+AI’s impact on finance, healthcare, manufacturing, and retail
+
+Comparison of salary trends in AI and Non-AI roles
+
+➡️ Read the findings - ([findings.qmd](https://github.com/sundars96/ad688-employability-sp25A2-group2/blob/main/findings.qmd))
+
+**2️⃣ Strategy – Adapting to the AI Economy**
+Top AI skills in demand for 2024 and beyond
+
+Sectors with highest AI job creation potential
+
+Concrete career strategies to thrive amidst automation
+
+➡️ Explore recommendations - ([career_strategy.qmd](https://github.com/sundars96/ad688-employability-sp25A2-group2/blob/main/career_strategy.qmd))
+
+---
+
+**Conclusion: Navigating the AI-Powered Job Market**
+
+AI isn’t just disrupting the world of work—it’s reshaping it. This transformation brings both uncertainty and opportunity.
+
+**🔎 Key Takeaways:**
+
+AI will not eliminate human work—it will redefine it
+Upskilling and adaptability are the ultimate career insurance
+AI should be seen as a partner in productivity, not just a disruptor
+The future of work belongs to those who are prepared, proactive, and AI-aware.
+
+📈 Let’s move from fear to foresight—and embrace the new world of AI-powered careers.

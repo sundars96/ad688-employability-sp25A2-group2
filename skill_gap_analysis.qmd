@@ -1,0 +1,164 @@
+---
+title: "Skill Gap Analysis"
+format: html
+jupyter: python3
+---
+
+## 📥 Load Dataset
+
+```{python}
+import pandas as pd
+
+df = pd.read_csv("lightcast_job_postings.csv")
+```
+
+---
+
+## 💼 Top Skills Required in IT Job Postings
+
+```{python}
+it_keywords = ['it', 'information technology', 'network', 'system', 'infrastructure', 'tech support', 'sysadmin']
+
+# Filter job titles using keywords
+df_it = df[df['TITLE_CLEAN'].str.lower().str.contains('|'.join(it_keywords), na=False)]
+
+import ast
+
+# Clean and explode skills from stringified lists
+clean_skills_it = df_it['SKILLS_NAME'].dropna().apply(
+    lambda x: ast.literal_eval(x) if x.strip().startswith('[') else []
+)
+all_skills_it = clean_skills_it.explode().str.strip()
+
+# Count top skills
+top_it_skills = all_skills_it.value_counts().head(10)
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+plt.figure(figsize=(10, 6))
+sns.barplot(x=top_it_skills.values, y=top_it_skills.index, palette='coolwarm')
+plt.title("Top 10 Skills Required for IT Jobs")
+plt.xlabel("Number of Postings")
+plt.ylabel("Skill")
+
+for i, val in enumerate(top_it_skills.values):
+    plt.text(val + 2, i, f"{val}", va='center')
+
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+## 🧠 Team Skill Self-Assessment
+
+```{python}
+skills_data = {
+    "Name": ["Sundar", "Krystie", "Nakul"],
+    "Communication": [1, 3, 2],
+    "Management": [2, 2, 2],
+    "Leadership": [3, 3, 3],
+    "Computer Science": [4, 4, 3],
+    "Problem Solving": [1, 3, 4],
+    "Data Analysis": [1, 3, 4],
+    "Operations": [4, 3, 4],
+    "Information Technology": [1, 5, 5],
+    "SQL (Programming Language)": [4, 3, 3],
+    "Project Management": [5, 2, 4],
+    "Planning": [5, 3, 4],
+    "Presentations": [1, 2, 4],
+    "Innovation": [5, 5, 5],
+    "Governance": [1, 3, 4],
+    "Customer Service": [2, 3, 5],    
+}
+
+df_skills = pd.DataFrame(skills_data)
+df_skills.set_index("Name", inplace=True)
+df_skills
+```
+
+```{python}
+plt.figure(figsize=(10, 7))  # Slightly larger for better readability
+
+sns.heatmap(
+    df_skills,
+    annot=True,
+    cmap="YlGnBu",  # More professional and visually calm than "coolwarm"
+    linewidths=1,
+    linecolor="gray",
+    cbar_kws={"label": "Skill Level"},
+    fmt='g',
+    annot_kws={"fontsize": 11, "fontweight": "bold"}
+)
+
+plt.title("🔥 Team Skill Levels Heatmap", fontsize=16, fontweight='bold', color='darkblue', pad=15)
+plt.xticks(rotation=45, fontsize=10, fontstyle='italic')
+plt.yticks(rotation=0, fontsize=10, fontstyle='italic')
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+## 📉 Team vs Market Skill Gap Analysis
+
+```{python}
+top_20_it_skills = [
+    "Communication", "Management", "Leadership", "Computer Science", "Problem Solving",
+     "Data Analysis", "Operations", "Information Technology", "SQL (Programming Language)", 
+     "Project Management", "Planning", "Presentations", "Innovation", "Governance", "Customer Service"
+]
+
+# Ensure all required skills are present
+for skill in top_20_it_skills:
+    if skill not in df_skills.columns:
+        df_skills[skill] = 0
+
+max_score = 5
+skill_gaps = max_score - df_skills[top_20_it_skills]
+
+# Average gap by person
+avg_gap_per_person = skill_gaps.mean(axis=1)
+
+# Average gap by skill
+avg_gap_per_skill = skill_gaps.mean(axis=0)
+
+# Plotting the average gap per skill
+plt.figure(figsize=(12, 7))
+avg_gap_per_skill.sort_values(ascending=False).plot(kind='barh', title='Team Skill Gaps vs IT Job Expectations')
+plt.xlabel("Average Gap (0 = skilled, 5 = unskilled)")
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+## 🧑 Individual Skill Gap Summary
+
+```{python}
+individual_gaps = 5 - df_skills[top_20_it_skills]
+
+for person in individual_gaps.index:
+    print(f"\n🧑 {person}'s top skill gaps:")
+    print(individual_gaps.loc[person].sort_values(ascending=False).head(3))
+```
+
+---
+
+## 📋 Personalized Recommendations
+
+**🧑‍💻 Sundar's Skill Gaps:**
+Sundar demonstrates equally high skill gaps across three critical areas: Communication, Data Analysis, and Problem Solving, each with a score of 4. This suggests that while he may have strong foundational knowledge, there is significant room for development in both technical and soft skills. Improving his data analysis capabilities could enhance his decision-making, while strengthening communication and problem-solving will boost collaboration and efficiency in cross-functional roles.
+
+**🧑‍💻 Krystie's Skill Gaps :**
+
+Krystie’s top developmental areas are well-balanced and revolve around leadership-oriented tasks: Management, Presentations, and Project Management, all with a gap of 3. This points to a need for stronger execution and communication of strategic ideas. Enhancing her presentation skills, in particular, would enable her to convey ideas more convincingly, while project and team management improvements could increase her effectiveness as a future leader.
+
+**🧑‍💻 Nakul's Skill Gaps :**
+
+Nakul continues to show moderate gaps in Communication and Management (3 each), with a slightly lower gap in Leadership (2). These gaps indicate that his development should focus on articulating ideas clearly and overseeing teams or tasks more effectively. While his leadership gap is lower, refining how he influences and guides others could elevate his contributions in group settings.
+
+
+
+

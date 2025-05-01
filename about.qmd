@@ -1,5 +1,27 @@
 ---
-title: "About"
+title: "AI vs. Non-AI Job Growth – Is AI taking over or creating more jobs?"
+author: "Sundarajan Swaminathan"
+date: "`r Sys.Date()`"
+format: html
+toc: true
 ---
 
-About this site
+**Decoding the Job Market: AI vs. Non-AI – Disruption or Opportunity?**
+As AI continues to reshape industries, I wanted to explore a question that hits close to home for many of us navigating the job hunt:
+
+**Is AI eliminating traditional jobs—or opening new doors for human talent?**
+
+**📌 Why This Topic?**
+Because stepping into the 2025 job market feels like walking into a battlefield—where AI seems to level up faster than the rest of us. So I decided to dive in and analyze the data behind the noise.
+
+**My key questions:**
+✅ Is AI replacing or generating jobs?
+✅ How do AI vs. Non-AI roles compare in growth and salaries?
+✅ What can job seekers do to stay competitive—especially in an AI-dominated hiring process?
+
+**👨‍💻 Who Am I?**
+A curious grad student & data enthusiast using Python, web analytics, and a whole lot of hustle to decode what’s really going on in the job market ( Also )
+
+**🚀 Goal: Build a research-backed job strategy that helps real people (like us) thrive in a future shaped by AI.**
+
+

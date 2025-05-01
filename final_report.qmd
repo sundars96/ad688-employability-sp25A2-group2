@@ -1,0 +1,49 @@
+---
+title: "Evaluating Personal Job Market Prospects in 2024"
+subtitle: "Final Report"
+author:
+  - name: Sundarajan Swaminathan
+    affiliations:
+      - ref: bu
+affiliations:
+  - id: bu
+    name: Boston University
+    city: Boston
+    state: MA
+date: today
+format: 
+  docx: default
+---
+
+{{< include index.qmd >}}
+
+{{< include data-cleaning.qmd >}}
+
+{{< include career-strategy.qmd >}}
+
+{{< include ml-methods.qmd >}}
+
+{{< include findings.qmd >}}
+
+## Skill Gap Analysis
+
+We compared our current team skills against the most in-demand job market skills for AI and analytics roles in 2024.
+
+| Skill              | In Market Demand | Team Has It |
+|-------------------|------------------|-------------|
+| Python             | ✅               | ✅          |
+| Spark              | ✅               | ✅          |
+| AWS                | ✅               | ✅          |
+| TF-IDF/NLP         | ✅               | ❌          |
+| Power BI           | ✅               | ✅          |
+| SQL                | ✅               | ✅          |
+
+Our team is well-prepared for technical roles in data and AI, with strong coverage of cloud, analytics, and visualization tools. Future upskilling in NLP and advanced feature engineering is recommended.
+
+
+## References
+
+- ONET Online. (2024). [https://www.onetonline.org/](https://www.onetonline.org/)  
+- U.S. Bureau of Labor Statistics. (2024). Occupational Outlook Handbook.  
+- Lecture materials from AD688, Spring 2025.  
+- Job dataset created for educational use in AD688 project.
