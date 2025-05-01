@@ -60,12 +60,18 @@ Participating in hackathons and conferences fosters knowledge sharing and expand
 
 ## Comparison of AI & Non-AI Career Growth
 
-.....Aspect......... ||.........AI-Driven Careers..............||.....Traditional Careers.....
+.....Aspect......... ||.........AI-Driven Careers......||.....Traditional Careers.....
+
 Employment Outlook	|| Rapid expansion (97M jobs projected)	|| Steady but slower growth
-Skill Set	         || Emphasis on AI, ML, and Data Science	|| Focus on domain-specific expertise
+
+Skill Set	    || Emphasis on AI, ML, and Data Science	|| Focus on domain-specific expertise
+
 Compensation Trends	|| Elevated income potential	            || Consistent and stable pay
+
 Job Stability	      || Demands ongoing skill upgrades	      || Generally more secure roles
+
 Work Setting	      || Predominantly hybrid or remote	      || Primarily in-person work
+
 Dominant Sectors	   || Technology, Finance, Healthcare	      || Manufacturing, Retail
 
 

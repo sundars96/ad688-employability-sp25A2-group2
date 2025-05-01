@@ -14,6 +14,7 @@ execute:
 **🌐 Introduction: AI and the Future of Work**
 
 The rapid evolution of Artificial Intelligence (AI) is revolutionizing the global workforce—raising one big question:
+
 **🔍 Is AI stealing jobs, or is it opening doors to entirely new careers?**
 
 As AI systems become more integrated into day-to-day operations—from automation in factories to algorithmic decision-making in finance—the debate over job displacement versus job creation has intensified. This report investigates both sides of the AI impact equation:
