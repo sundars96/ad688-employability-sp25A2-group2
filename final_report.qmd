@@ -17,11 +17,7 @@ format:
 
 {{< include index.qmd >}}
 
-{{< include data-cleaning.qmd >}}
-
-{{< include career-strategy.qmd >}}
-
-{{< include ml-methods.qmd >}}
+{{< include career_strategy.qmd >}}
 
 {{< include findings.qmd >}}
 

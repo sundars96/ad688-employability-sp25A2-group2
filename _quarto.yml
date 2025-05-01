@@ -9,7 +9,7 @@ website:
         text: Home
       - href: findings.qmd
         text: Findings
-      - href: career-strategy.qmd
+      - href: career_strategy.qmd
         text: Career Strategy
       - href: about.qmd
         text: About
